@@ -52,9 +52,9 @@ def time_stats(df):
 
 
     # TO DO: display the most common start hour
-    print("Most common month: " + Month)
-    print("Most common day of week: " + Day)
-    print("Most common start hour: " + Hour)
+    print('Most common month: {}'.format(Month))
+    print('Most common day of week: {}'.format(Day))
+    print('Most common start hour: {}'.format(Hour))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -78,9 +78,9 @@ def station_stats(df):
     Estation = df["End Station"].value_counts()[:1].index.tolist()[0]
     Comb = df["StationComb"].value_counts()[:1].index.tolist()[0]
 
-    print("Most common start station: " + Sstation)
-    print("Most common ending station: " + Estation)
-    print("Most common start station and end station: " + Comb)
+    print('Most common ending station: {}'.format(Estation))
+    print('Most common start station: {}'.format(Sstation))
+    print('Most common start station and end station: {}'.format(Comb))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
