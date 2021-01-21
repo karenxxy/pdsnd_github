@@ -8,7 +8,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
-    
+
     city = input("Please specify one the city to analyze (chicago/new york city/washington): ").lower()
     while city not in ['chicago', 'new york city', 'washington']:
         city = input("Only three cities available: chicago, new york city, washington. Please try again: ").lower()
@@ -80,7 +80,7 @@ def station_stats(df):
     print("Most common start station: " + Sstation)
     print("Most common ending station: " + Estation)
     print("Most common start station and end station: " + Comb)
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -123,7 +123,7 @@ def user_stats(df):
         print("Earliest year of birth: " + str(min(df['Birth Year'])))
         print("Most recent year of birth: " + str(max(df['Birth Year'])))
         print("Most common year of birth: " + str(df["Birth Year"].mode()[0]))
-    else: 
+    else:
         print('No Birth Year Info')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -140,6 +140,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
+        #keep priting 5 more rows if required
         n = 0
         dataflag = input('\nWould you like to see more data? Enter yes or no.\n').lower()
         while dataflag == 'yes':
@@ -147,7 +148,7 @@ def main():
 #             print('Printing ' + str(n) + 'rows.')
             n = n + 5
             dataflag= input('\nWould you like to see more data? Enter yes or no.\n').lower()
-            
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
